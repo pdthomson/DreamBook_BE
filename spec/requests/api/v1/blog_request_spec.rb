@@ -37,4 +37,5 @@ RSpec.describe 'All Blogs API' do
     expect(blog[:attributes][:user_id]).to eq(blog1.user_id)
     expect(blog[:attributes][:user_id]).to_not eq(blog2.user_id)
   end
+
 end
