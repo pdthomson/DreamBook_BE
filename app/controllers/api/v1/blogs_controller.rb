@@ -7,6 +7,24 @@ class Api::V1::BlogsController < ApplicationController
     render json: BlogSerializer.create_blog(Blog.find(params[:id]))
   end
 
+  def create
+    blog = Blog.new(blog_params)
+    if blog.save
+      render json: BlogSerializer.create_blog(blog), status: 201
+    else
+      render status: 400
+    end
+  end
+
+  def update
+    blog = Blog.find(params[:id])
+		blog.update!(blog_params)
+		render json: blog
+  end
+
+  def destroy
+    render json: Blog.destroy(params[:id]), status: 204
+  end
 
   private
 
@@ -14,3 +32,5 @@ class Api::V1::BlogsController < ApplicationController
     params.permit(:id, :title, :body, :user_id, :status)
   end
 end
+
+
