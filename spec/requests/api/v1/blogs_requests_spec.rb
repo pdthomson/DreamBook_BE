@@ -31,35 +31,57 @@ RSpec.describe 'All Blogs API' do
     end
   end
 
-  # xit 'it returns an error if blog id does not exist' do
-  #   blog = create(:blog)
-  #   blog2 = create(:blog)
+  it 'creates a blog' do
+    blog_params = ({
+                title: 'Purple Lizards',
+                body: 'Had a dream where there was purple lizards everywhere',
+                status: 'shared',
+                user_id: 12 
+                })
+    headers = {"CONTENT_TYPE" => "application/json"}
+    post "/api/v1/blogs", headers: headers, params: JSON.generate(blog_params)
 
-  #   get '/api/vi/blogs/12345'
+    expect(response).to be_successful 
+    expect(response.status).to eq(201)
 
-  #   expect(response.status).to eq(404)
-  # end
+    created_blog = Blog.last
 
-  # xit 'creates a blog' do
-  #   blog_params = ({
-  #               title: 'Pulble Lizards',
-  #               body: 'Had a dream where there was purple lizards everywhere',
-  #               status: 0,
-  #               user_id: 12 
-  #               })
-  #   headers = {"CONTENT_TYPE" => "application/json"}
-  #   post "/api/v1/blogs", headers: headers, params: JSON.generate(blog: blog_params)
+    expect(created_blog.title).to eq(blog_params[:title])
+    expect(created_blog.title).to eq('Purple Lizards')
+    expect(created_blog.body).to eq(blog_params[:body])
+    expect(created_blog.status).to eq('shared')
+    expect(created_blog.user_id).to eq(12)
+  end
 
-  #   expect(response).to be_successful 
-  #   expect(response.status).to eq(201)
+  it 'does not create blog' do
+        blog_params = ({
+                title: 'Purple Lizards',
+                body: 'Had a dream where there was purple lizards everywhere',
+                status: 'shared'
+                })
+    headers = {"CONTENT_TYPE" => "application/json"}
+    post "/api/v1/blogs", headers: headers, params: JSON.generate(blog_params)
 
-  #   created_blog = Blog.last
+    expect(response).to_not be_successful 
+    expect(response.status).to eq(400) 
+  end
 
+  it 'updates a blog' do
+    blog = create(:blog)
+    previous_title = blog.title
+    previous_body = blog.body
 
-  #   expect(created_blog.title).to eq(blog_params[:title])
-  #   expect(created_blog.title).to eq('Pulble Lizards')
-  #   expect(created_blog.body).to eq(blog_params[:body])
-  #   expect(created_blog.status).to eq('shared')
-  #   expect(created_blog.user_id).to eq(12)
-  # end
+    blog_params = ({
+                blog_id: blog.id,
+                title: 'Pink Lizards'
+                })
+
+    headers = {"CONTENT_TYPE" => "application/json"}
+    patch "/api/v1/blogs/#{blog.id}", headers: headers, params: JSON.generate(blog_params)
+    
+    updated_blog = Blog.find_by(id: blog.id)
+    expect(response).to be_successful
+    expect(updated_blog.title).to_not eq(previous_title)
+    expect(updated_blog.body).to eq(previous_body)
+  end
 end
