@@ -22,6 +22,10 @@ class Api::V1::BlogsController < ApplicationController
 		render json: blog
   end
 
+  def destroy
+    render json: Blog.destroy(params[:id]), status: 204
+  end
+
   private
 
   def blog_params

@@ -84,4 +84,13 @@ RSpec.describe 'All Blogs API' do
     expect(updated_blog.title).to_not eq(previous_title)
     expect(updated_blog.body).to eq(previous_body)
   end
+
+  it 'deletes a blog' do
+    blog = create(:blog)
+
+    expect{ delete "/api/v1/blogs/#{blog.id}"}.to change(Blog, :count).by(-1)
+    expect(response).to be_successful
+    expect(response.status).to eq(204)
+    expect{Blog.find(blog.id)}.to raise_error(ActiveRecord::RecordNotFound)
+  end
 end
