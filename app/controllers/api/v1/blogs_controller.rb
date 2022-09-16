@@ -28,3 +28,5 @@ class Api::V1::BlogsController < ApplicationController
     params.permit(:id, :title, :body, :user_id, :status)
   end
 end
+
+
