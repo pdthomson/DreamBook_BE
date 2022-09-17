@@ -20,7 +20,7 @@ class BlogSerializer
     def create_blog(blog)
       {
         data:
-          {
+        {
             id: "#{blog.id}",
             type: "blog",
             attributes: {
@@ -32,6 +32,5 @@ class BlogSerializer
           }
       }
     end
-
   end
 end
