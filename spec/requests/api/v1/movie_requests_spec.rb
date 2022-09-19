@@ -9,31 +9,23 @@ RSpec.describe 'All Recommended Movies API' do
       keyword: 'lizards'
       })
 
-
     get "/api/v1/movie_recommendations?keyword=#{blog[:keyword]}"
 
     movies = JSON.parse(response.body, symbolize_names: true)
 
     expect(response).to be_successful
     expect(response.status).to eq(200)
-    # expect(blogs[:data].count).to eq(3)
 
-    # blogs[:data].each do |blog|
-    #   expect(blog).to have_key(:id)
-    #   expect(blog[:id]).to be_a(String)
+    movies[:data].each do |movie|
+      expect(movie).to have_key(:id)
+      expect(movie[:id]).to be_a(Integer)
 
-    #   expect(blog[:attributes]).to be_a(Hash)
-    #   expect(blog[:attributes]).to have_key(:title)
-    #   expect(blog[:attributes][:title]).to be_a(String)
+      expect(movie[:attributes]).to be_a(Hash)
+      expect(movie[:attributes]).to have_key(:title)
+      expect(movie[:attributes][:title]).to be_a(String)
       
-    #   expect(blog[:attributes]).to have_key(:body)
-    #   expect(blog[:attributes][:body]).to be_a(String)
-
-    #   expect(blog[:attributes]).to have_key(:status)
-    #   expect(blog[:attributes][:status]).to be_a(String)
-      
-    # #   expect(blog[:attributes]).to have_key(:user_id)
-    # #   expect(blog[:attributes][:user_id]).to be_a(Integer)
-    # end
+      expect(movie[:attributes]).to have_key(:description)
+      expect(movie[:attributes][:description]).to be_a(String)
+    end
   end
 end
