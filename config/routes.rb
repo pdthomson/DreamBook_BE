@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       end
 			
       resources :comments, only: [:index, :show, :create, :update, :destroy]
+			resources :movie_recommendations, only: [:index]
 		end
 	end
 end

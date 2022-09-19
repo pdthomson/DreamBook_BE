@@ -1,17 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe 'All Recommended Movies API' do
-  it "api call can get all recommended movies" do 
-    
+  it "api call can get all recommended movies", :vcr do 
+    blog = ({
+      title: 'Purple Lizards',
+      body: 'Had a dream where there was purple lizards everywhere',
+      status: 'shared',
+      keyword: 'lizards'
+      })
 
 
-
-
-
-
-    create_list(:blog, 3)
-
-    get '/api/v1/blogs'
+    get "/api/v1/movie_recommendations?keyword=#{blog[:keyword]}"
 
     blogs = JSON.parse(response.body, symbolize_names: true)
 
