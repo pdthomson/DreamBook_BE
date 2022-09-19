@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_16_164032) do
+ActiveRecord::Schema.define(version: 2022_09_19_213540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 2022_09_16_164032) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "book_recommendations", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.integer "user_id"
+    t.bigint "blog_id"
+    t.index ["blog_id"], name: "index_book_recommendations_on_blog_id"
+  end
+
   create_table "comments", force: :cascade do |t|
     t.text "comment_text"
     t.integer "user_id"
@@ -33,5 +41,15 @@ ActiveRecord::Schema.define(version: 2022_09_16_164032) do
     t.index ["blog_id"], name: "index_comments_on_blog_id"
   end
 
+  create_table "movie_recommendations", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.integer "user_id"
+    t.bigint "blog_id"
+    t.index ["blog_id"], name: "index_movie_recommendations_on_blog_id"
+  end
+
+  add_foreign_key "book_recommendations", "blogs"
   add_foreign_key "comments", "blogs"
+  add_foreign_key "movie_recommendations", "blogs"
 end
