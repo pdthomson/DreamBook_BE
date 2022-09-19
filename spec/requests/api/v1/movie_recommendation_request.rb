@@ -7,9 +7,9 @@ RSpec.describe 'All Movie Recommendations API' do
     expect(parsed_json[:results]).to be_a Array
 
     movie_recommendation_data = parsed_json[:results][0]
-    expect(movie_recommendation_data).to include(:title, :description)
+    expect(movie_recommendation_data).to include(:title, :overview)
     expect(movie_recommendation_data[:title]).to be_a String
-    expect(movie_recommendation_data[:description]).to be_a String
+    expect(movie_recommendation_data[:overview]).to be_a String
     expect(movie_recommendation_data[:id]).to be_a Integer
   end
 end

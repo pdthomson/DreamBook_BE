@@ -3,7 +3,6 @@ class MovieService
     def movie_keyword_recommendations(keyword)
       response = conn.get("/3/search/movie?api_key=#{ENV["movie_api_key"]}&language=en-US&query=#{keyword}")
       json = JSON.parse(response.body, symbolize_names: true)
-      binding.pry
     end
   end 
 
