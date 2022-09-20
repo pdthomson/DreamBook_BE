@@ -16,9 +16,8 @@ RSpec.describe 'All Recommended Books API' do
     expect(response.status).to eq(200)
 
     books[:data].each do |book|
-      # binding.pry
-      # expect(book).to have_key(:id)
-      # expect(book[:id]).to be_a(String)
+      expect(book).to have_key(:id)
+      expect(book[:id]).to be_a(String)
       expect(book[:attributes]).to be_a(Hash)
       expect(book[:attributes]).to have_key(:title)
       expect(book[:attributes][:title]).to be_a(String)
