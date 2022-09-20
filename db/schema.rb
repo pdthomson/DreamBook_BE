@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_19_221417) do
+ActiveRecord::Schema.define(version: 2022_09_20_184810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2022_09_19_221417) do
 
   create_table "book_recommendations", force: :cascade do |t|
     t.string "title"
-    t.string "description"
+    t.string "author_name"
     t.integer "user_id"
     t.bigint "blog_id"
     t.index ["blog_id"], name: "index_book_recommendations_on_blog_id"

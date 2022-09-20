@@ -1,5 +1,5 @@
-class MovieSerializer 
-  class << self 
+class MovieSerializer
+  class << self
     def get_movie_recommendations(movie_data)
       {
         data: movie_data[:results].map do |movie|
