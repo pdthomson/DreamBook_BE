@@ -5,9 +5,10 @@ Rails.application.routes.draw do
 			resources :blogs, only: [:index, :show, :create, :update, :destroy] do
 				resources :comments, only: [:index, :show, :create, :update, :destroy]
       end
-			
+
       resources :comments, only: [:index, :show, :create, :update, :destroy]
 			resources :movie_recommendations, only: [:index]
+      resources :book_recommendations
 		end
 	end
 end
