@@ -29,8 +29,6 @@ class Api::V1::BlogsController < ApplicationController
   private
 
   def blog_params
-    params.permit(:id, :title, :body, :user_id, :status)
+    params.permit(:id, :title, :body, :user_id, :status, :keyword)
   end
 end
-
-
