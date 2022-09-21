@@ -10,7 +10,8 @@ class BlogSerializer
               title: blog.title,
               body: blog.body,
               status: blog.status,
-              user_id: blog.user_id
+              user_id: blog.user_id,
+              keyword: blog.keyword
               }
             }
         end
@@ -27,7 +28,8 @@ class BlogSerializer
               title: blog.title,
               body: blog.body,
               status: blog.status,
-              user_id: blog.user_id
+              user_id: blog.user_id,
+              keyword: blog.keyword
               }
           }
       }
