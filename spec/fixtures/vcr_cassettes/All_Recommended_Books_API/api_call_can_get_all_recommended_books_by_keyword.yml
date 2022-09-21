@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx/1.18.0 (Ubuntu)
       Date:
-      - Tue, 20 Sep 2022 20:11:24 GMT
+      - Wed, 21 Sep 2022 00:21:46 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -35,7 +35,7 @@ http_interactions:
       Access-Control-Max-Age:
       - '86400'
       X-Ol-Stats:
-      - '"SR 1 0.434 TT 0 0.466"'
+      - '"SR 1 0.457 TT 0 0.482"'
       Referrer-Policy:
       - no-referrer-when-downgrade
     body:
@@ -9375,5 +9375,5 @@ http_interactions:
             "q": "lizard",
             "offset": null
         }
-  recorded_at: Tue, 20 Sep 2022 20:11:24 GMT
+  recorded_at: Wed, 21 Sep 2022 00:21:46 GMT
 recorded_with: VCR 6.1.0
