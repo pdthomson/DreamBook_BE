@@ -20,12 +20,11 @@
 
 ## Table of contents
 
-- Schema
-- Setup
-- Gems
-- Endpoints
-- Environments
-- Contributors
+- [Schema](#schema)
+- [Setup](#setup)
+- [Gems](#gems)
+- [Endpoints](#endpoints)
+- [Contributors](#contributors)
 
 ## Schema: 
 
