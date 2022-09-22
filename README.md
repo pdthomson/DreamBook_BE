@@ -12,6 +12,10 @@
 
 ## Welcome to the Back-end repo for DreamBook!
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/103782984/191810726-a781e16e-4ecc-4ef8-8b31-efe59fa82280.jpg" width=30% height=30%>
+</p>
+
 [DreamBook](https://github.com/pdthomson/DreamBook_BE) Back-end API was built alongside the [DreamBook](https://github.com/pdthomson/DreamBook_FE) Front-end application! The back-end is responsible for receiving requests from the front-end, storing data, and packaging up the data and returning it to the front-end for viewing.
 
 ## Table of contents
@@ -87,9 +91,9 @@ get "/api/v1/book_recommendations?keyword="
 post "/api/v1/blogs"
 
 ## Contributors
-Tyler Caudill - [Github]/[LinkedIn]
-Shirley DeCesari - [Github]/[LinkedIn]
-Nikky Rojas - [Github]/[LinkedIn]
-Gwendolyn Ruiz - [Github]/[LinkedIn]
-Bryce Simonds - [Github]/[LinkedIn]
-Parker Thomson - [Github]/[LinkedIn]
+-   **Tyler Caudill** - _Turing Student_ - [GitHub Profile](https://github.com/TeeCaud) - [LinkedIn](https://www.linkedin.com/in/tyler-caudill-75885b240/)
+-   **Shirley DeCesari** - _Turing Student_ - [GitHub Profile](https://github.com/sdecesari) - [LinkedIn](https://www.linkedin.com/in/shirley-decesari-760950157/)
+-   **Nikky Rojas** - _Turing Student_ - [GitHub Profile](https://github.com/nikkyrojas) - [LinkedIn](https://www.linkedin.com/in/nikkyrojas/)
+-   **Gwendolyn Ruiz** - _Turing Student_ - [GitHub Profile](https://github.com/gwen-marina) - [LinkedIn](https://www.linkedin.com/in/gwendolyn-ruiz-329064238/)
+-   **Bryce Simonds** - _Turing Student_ - [GitHub Profile](https://github.com/brycesimonds) - [LinkedIn](https://www.linkedin.com/in/bryce-simonds/) - [Turing Alum Profile](https://terminal.turing.edu/alumni/1499-bryce-simonds)
+-   **Parker Thomson** - _Turing Student_ - [GitHub Profile](https://github.com/pdthomson) - [LinkedIn](https://www.linkedin.com/in/parker-thomson-a15a68146/)
