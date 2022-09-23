@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx/1.18.0 (Ubuntu)
       Date:
-      - Thu, 22 Sep 2022 15:45:16 GMT
+      - Fri, 23 Sep 2022 17:08:45 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -35,14 +35,14 @@ http_interactions:
       Access-Control-Max-Age:
       - '86400'
       X-Ol-Stats:
-      - '"SR 1 0.336 TT 0 0.410"'
+      - '"SR 1 0.475 TT 0 0.518"'
       Referrer-Policy:
       - no-referrer-when-downgrade
     body:
       encoding: UTF-8
       string: |-
         {
-            "numFound": 68013,
+            "numFound": 68009,
             "start": 0,
             "numFoundExact": true,
             "docs": [
@@ -26508,9 +26508,9 @@ http_interactions:
                     "ddc_sort": "341.58"
                 }
             ],
-            "num_found": 68013,
+            "num_found": 68009,
             "q": "blue",
             "offset": null
         }
-  recorded_at: Thu, 22 Sep 2022 15:45:16 GMT
+  recorded_at: Fri, 23 Sep 2022 17:08:45 GMT
 recorded_with: VCR 6.1.0
